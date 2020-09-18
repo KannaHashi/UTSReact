@@ -1,0 +1,143 @@
+.navbar,
+.container-fluid,
+.fb {
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+}
+
+.f {
+  font-family: poppins, sans-serif;
+}
+
+.d3 {
+  height: 25px;
+  width: 25px;
+  font-size: 12px;
+  border-radius: 50%;
+}
+
+.makanan {
+  font-size: 15px;
+}
+
+.s5 {
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.round {
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.btn {
+  background: #fb6d3a;
+  font-size: 12px;
+}
+
+.oren {
+  color: #fb6d3a;
+}
+
+.col-9::-webkit-scrollbar {
+  display: none;
+}
+
+.col-9 {
+  height: 660px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.ampas {
+  height: 660px;
+}
+
+.gcover {
+  background-size: cover;
+  transition: 0.3s;
+}
+
+.gcover:hover {
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.bg-yoi {
+  background: #fff5ed;
+}
+
+.nor {
+  white-space: nowrap;
+}
+
+.input-group,
+input[type="text"] {
+  width: 700px;
+}
+
+::placeholder {
+  font-size: 12px;
+}
+
+.cardi {
+  background: #6455c2;
+}
+
+.name {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+*:focus {
+  outline: none !important;
+  outline-offset: none !important;
+}
+
+#semua {
+  background: url("https://images.unsplash.com/photo-1517317138817-d043c7dcc35f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+  background-size: cover;
+}
+
+.profil {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+#masakan {
+  background: url("https://belajar-react.smkmadinatulquran.sch.id/image/masakan1.jpg");
+  background-size: cover;
+}
+
+.a {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#pija {
+  background: url("https://belajar-react.smkmadinatulquran.sch.id/image/pizza1.jpg");
+  background-size: cover;
+}
+
+#jus {
+  background: url("https://belajar-react.smkmadinatulquran.sch.id/image/juz1.jpg");
+  background-size: cover;
+}
+
+.yey {
+  font-size: 20px;
+}
+
+#big {
+  height: 120px;
+  width: auto;
+  padding: -20px;
+  margin: 0;
+}
+
+.rounde {
+  border-radius: 13px;
+}
