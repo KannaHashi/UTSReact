@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import Axios from "axios";
 import ".././styles.css";
+import Modal from "./Modal";
 // import swal from "sweetalert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +17,12 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      image: "",
       name: "",
+      harga: "",
+      rating: "",
+      jumlah: "",
+      waktu: "",
       datas: [],
       per_page: "5",
       current_page: "",
@@ -86,7 +92,7 @@ class Home extends Component {
     this.setState({
       search: sc
     });
-    const url = `https://belajar-react.smkmadinatulquran.sch.id/api/populer/cari/${sc}`;
+    const url = `https://belajar-react.smkmadinatulquran.sch.id/api/populer/all/${sc}`;
     console.log("keyword", sc);
     Axios.get(url).catch((error) => {
       return (error = false);
@@ -131,6 +137,24 @@ class Home extends Component {
   //     console.log(error);
   //   });
   // }
+
+  populer() {
+    console.log("popular items");
+    const url = `https://belajar-react.smkmadinatulquran.sch.id/api/populer/all`;
+    Axios.get(url)
+      .then((response) => {
+        console.log("Data Berhasil didapatkan", response);
+        this.setState({
+          datas: response.data.data,
+          per_page: response.data.meta.per_page,
+          current_page: response.data.meta.current_page,
+          total_pages: response.data.meta.total_pages
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   componentDidMount() {
     console.log("componentDidMount");
@@ -283,6 +307,19 @@ class Home extends Component {
                         className="card pt-5 gcover rounde border-0"
                         id=""
                         style={{ backgroundImage: "url(" + data.image + ")" }}
+                        data-toggle="modal"
+                        data-target="#exampleModal"
+                        onClick={() => {
+                          this.setState({
+                            name: data.name,
+                            image: data.image,
+                            harga: data.harga,
+                            waktu: data.waktu,
+                            jumlah: data.jumlah,
+                            rating: data.rating,
+                            status: "Update"
+                          });
+                        }}
                       >
                         <div className="card-body mt-4 pb-2 pl-2 pt-4">
                           <span className="f name bg-light rounde py-1 px-3">
@@ -374,6 +411,29 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="modal fade"
+          id="exampleModal"
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <Modal
+                updateTable={this.updateTable}
+                status={this.state.status}
+                name={this.state.name}
+                image={this.state.image}
+                waktu={this.state.waktu}
+                harga={this.state.harga}
+                jumlah={this.state.jumlah}
+                rating={this.state.rating}
+                formName={this.state.formName}
+              />
             </div>
           </div>
         </div>

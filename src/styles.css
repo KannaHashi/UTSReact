@@ -54,6 +54,12 @@
   height: 660px;
 }
 
+.model {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+}
+
 .gcover {
   background-size: cover;
   transition: 0.3s;
